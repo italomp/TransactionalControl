@@ -1,11 +1,10 @@
 package com.example.transactionalControl.dto;
 
-import com.example.transactionalControl.model.Sale;
+import java.io.Serializable;
 
-public class ProductDto {
+public class ProductDto  implements Serializable {
     private long id;
     private String name;
-    private Sale sale;
 
     public long getId() {
         return id;
@@ -21,13 +20,5 @@ public class ProductDto {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Sale getSale() {
-        return sale;
-    }
-
-    public void setSale(Sale sale) {
-        this.sale = sale;
     }
 }

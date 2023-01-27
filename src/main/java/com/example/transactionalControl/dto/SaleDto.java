@@ -1,12 +1,23 @@
 package com.example.transactionalControl.dto;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
-public class SaleDto {
+public class SaleDto implements Serializable {
     private long id;
     private List<ProductDto> productList;
 
+    public SaleDto() {
+        this.productList = new ArrayList<>();
+    }
+
     public SaleDto(List<ProductDto> productList) {
+        this.productList = productList;
+    }
+
+    public SaleDto(long id, List<ProductDto> productList) {
+        this.id = id;
         this.productList = productList;
     }
 
@@ -19,7 +30,7 @@ public class SaleDto {
     }
 
     public List<ProductDto> getProductList() {
-        return productList;
+        return this.productList;
     }
 
     public void setProducts(List<ProductDto> productList) {

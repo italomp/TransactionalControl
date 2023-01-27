@@ -9,19 +9,10 @@ public class Product {
     private long id;
     private String name;
     @ManyToOne
-    @JoinColumn(name = "venda_id")
+    @JoinColumn(name = "sale_id")
     private Sale sale;
 
     public Product() {
-    }
-
-    public Product(String name) {
-        this.name = name;
-    }
-
-    public Product(long id, String name) {
-        this.id = id;
-        this.name = name;
     }
 
     public Product(String name, Sale sale) {
